@@ -1,8 +1,8 @@
 # Hgrab
 
 ### Additional Informations
- - Not using to much bandwith
- - You don't limit of api keys **(10 keys -> 100k ips)**
+ - Not using too much bandwith
+ - multiple software
 
 ### Installation
 Install the app on the server
