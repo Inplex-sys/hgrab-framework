@@ -2,7 +2,7 @@
 
 ### Additional Informations
  - Not using too much bandwith
- - multiple software
+ - multiple software support
 
 ### Installation
 Install the app on the server
