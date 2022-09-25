@@ -128,9 +128,25 @@ class Scan:
                 return False
                 pass
 
-            if "ajs-keyboardshortcut-hash" in httpRespons.text:
+            if "ajs-keyboardshortcut-hash" in httpResponse.text:
                 params['counter']['found'] += 1
                 Main.saveHost(host)
+                pass
+            pass
+        elif sys.argv[3] == "bitbucket":
+            httpResponse = Main.httpRequest(sheme, host, port, "rest/api/latest/repos")
+            if httpResponse == False:
+                return False
+                pass
+            
+            try:
+                if "size" in httpResponse.json().keys():
+                    if httpResponse.json()['size'] != 0:
+                        params['counter']['found'] += 1
+                        Main.saveHost(host)
+                        pass
+                    pass
+            except:
                 pass
             pass
         elif sys.argv[3] == "apache-nifi":
@@ -139,7 +155,7 @@ class Scan:
                 return False
                 pass
 
-            if "<title>NiFi</title>" in httpRespons.text:
+            if "<title>NiFi</title>" in httpResponse.text:
                 params['counter']['found'] += 1
                 Main.saveHost(host)
                 pass
@@ -150,7 +166,7 @@ class Scan:
                 return False
                 pass
 
-            if "<title>Laravel</title>" in httpRespons.text:
+            if "<title>Laravel</title>" in httpResponse.text:
                 params['counter']['found'] += 1
                 Main.saveHost(host)
                 pass
@@ -161,7 +177,7 @@ class Scan:
                 return False
                 pass
 
-            if ">About GitLab<" in httpRespons.text:
+            if ">About GitLab<" in httpResponse.text:
                 params['counter']['found'] += 1
                 Main.saveHost(host)
                 pass
@@ -203,7 +219,8 @@ def main():
                 "       gitlab - GitLab that is used for version control and project management.\n"
                 "       unifi - Ubiquiti Unifi is a powerful wifi repeater.\n"
                 "       wso2 - WSO2's first product was code-named Tungsten, and was meant for the development of web applications.\n"
-                "       laravel - Laravel is a PHP web application framework with expressive, elegant syntax."
+                "       laravel - Laravel is a PHP web application framework with expressive, elegant syntax.\n"
+                "       bitbucket - Bitbucket is a web-based version control repository hosting service owned by Atlassian."
             )
             sys.exit(0)
             pass
