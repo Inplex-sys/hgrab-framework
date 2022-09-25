@@ -34,6 +34,7 @@ Known software for scanning :
        unifi - Ubiquiti Unifi is a powerful wifi repeater.
        wso2 - WSO2's first product was code-named Tungsten, and was meant for the development of web applications.
        laravel - Laravel is a PHP web application framework with expressive, elegant syntax.
+       bitbucket - Bitbucket is a web-based version control repository hosting service owned by Atlassian.
 ```
 
 ### Using hgrab with **zmap** for scanning vmware-vcenter targets on **tcp/443**
