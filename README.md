@@ -35,6 +35,7 @@ Known software for scanning :
        wso2 - WSO2's first product was code-named Tungsten, and was meant for the development of web applications.
        laravel - Laravel is a PHP web application framework with expressive, elegant syntax.
        bitbucket - Bitbucket is a web-based version control repository hosting service owned by Atlassian.
+       zimbra - Zimbra is a web-based email and collaboration platform developed by Synacor.
 ```
 
 ### Using hgrab with **zmap** for scanning vmware-vcenter targets on **tcp/443**
