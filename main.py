@@ -54,7 +54,7 @@ class Main:
             headers = {
                 "accept": "*/*",
                 "accept-encoding": "*/*",
-                "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+                "accept-language": "en-US,en;q=0.9",
                 "sec-ch-ua": '"Google Chrome";v="96", "Chromium";v="96", ";Not A Brand";v="99"',
                 "sec-ch-ua-mobile": '?0',
                 "sec-ch-ua-platform": '"Windows"',
@@ -171,6 +171,17 @@ class Scan:
                 Main.saveHost(host)
                 pass
             pass
+        elif sys.argv[3] == "zimbra":
+            httpResponse = Main.httpRequest(sheme, host, port, "")
+            if httpResponse == False:
+                return False
+                pass
+
+            if "<title>Zimbra Web Client Sign In</title>" in httpResponse.text:
+                params['counter']['found'] += 1
+                Main.saveHost(host)
+                pass
+            pass        
         elif sys.argv[3] == "gitlab":
             httpResponse = Main.httpRequest(sheme, host, port, "users/sign_in")
             if httpResponse == False:
@@ -220,7 +231,8 @@ def main():
                 "       unifi - Ubiquiti Unifi is a powerful wifi repeater.\n"
                 "       wso2 - WSO2's first product was code-named Tungsten, and was meant for the development of web applications.\n"
                 "       laravel - Laravel is a PHP web application framework with expressive, elegant syntax.\n"
-                "       bitbucket - Bitbucket is a web-based version control repository hosting service owned by Atlassian."
+                "       bitbucket - Bitbucket is a web-based version control repository hosting service owned by Atlassian.\n"
+                "       zimbra - Zimbra is a web-based email and collaboration platform developed by Synacor."
             )
             sys.exit(0)
             pass
