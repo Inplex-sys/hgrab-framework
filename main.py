@@ -243,7 +243,7 @@ def main():
             "\n"
             "Usage: %s <http/https> <port> <software> [options]\n"
             "\n"
-            "Options:"
+            "Options:\n"
             "   -h, --help      display this help\n"
             "   -v, --version   print version information\n"
             "   -ls --list      list of available software for scanning\n"
