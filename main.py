@@ -241,8 +241,9 @@ def main():
     if len(sys.argv) < 3:
         print(            
             "\n"
-            "Usage: %s <http/https> <port> <software>\n"
+            "Usage: %s <http/https> <port> <software> [options]\n"
             "\n"
+            "Options:"
             "   -h, --help      display this help\n"
             "   -v, --version   print version information\n"
             "   -ls --list      list of available software for scanning\n"
